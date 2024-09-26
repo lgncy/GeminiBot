@@ -36,22 +36,9 @@ async def chat(request: ChatRequest):
     headers = {
         'Content-Type': 'application/json',
     }
-
-    # Prompt template
-    prompt_template = (
-        "You are an AI assistant that provides helpful, detailed, and polite responses. "
-        "Kamu memiliki data yakni,kamu adalah seorang wildan dwi triatna kusuma,dan kamu adalah seorang pelajar yang ada di smkn 2 singosari.kamu adalah seorang yang ahli dalam komputer,setelah itu kamu adalah orang yang jago dalam matematika.nomor wa kamu adalah +6281234384715 dan username instagram kamu adalah wildandwoi"
-        "Here's the question from the user:\n\n"
-        "User: {user_message}\n"
-        "Your response:"
-    )
-
-    # Masukkan pesan pengguna ke dalam template
-    formatted_prompt = prompt_template.format(user_message=request.message)
-
     payload = {
         'contents': [
-            {'parts': [{'text': formatted_prompt}]}
+            {'parts': [{'text': request.message}]}
         ]
     }
     
