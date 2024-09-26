@@ -8,7 +8,10 @@ app = FastAPI()
 
 # Configuring CORS
 orig_origins = [
-    "http://localhost:3000",  # Ganti dengan URL frontend Anda jika berbeda
+    "http://localhost:3000",
+    "https://porto-wildandwi-git-master-lgncys-projects.vercel.app",
+    "porto-wildandwi-bv275qjbo-lgncys-projects.vercel.app"
+    "wildandwi.my.id"  # Ganti dengan URL frontend Anda
 ]
 
 app.add_middleware(
@@ -42,4 +45,3 @@ async def chat(request: ChatRequest):
     
     print("Response from Gemini:", response.json())  # Tambahkan ini untuk memeriksa respons
     return response.json()
-
