@@ -11,7 +11,8 @@ orig_origins = [
     "http://localhost:3000",
     "https://porto-wildandwi-git-master-lgncys-projects.vercel.app",
     "https://porto-wildandwi-bv275qjbo-lgncys-projects.vercel.app",  # Tambahkan koma di sini
-    "https://wildandwi.my.id/"
+    "https://wildandwi.my.id/",
+    "*"
 ]
 
 
