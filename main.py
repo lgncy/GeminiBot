@@ -3,14 +3,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import httpx
-import os
-from dotenv import load_dotenv  # Tambahkan ini untuk memuat .env
-
-load_dotenv()  # Muat file .env
 
 app = FastAPI()
 
-# Konfigurasi CORS
+# Configuring CORS
 orig_origins = [
     "http://localhost:3000",
     "https://porto-wildandwi-git-master-lgncys-projects.vercel.app",
@@ -18,6 +14,7 @@ orig_origins = [
     "https://wildandwi.my.id/",
     "*"
 ]
+
 
 app.add_middleware(
     CORSMiddleware,
@@ -34,7 +31,7 @@ class ChatRequest(BaseModel):
 async def chat(request: ChatRequest):
     url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
     params = {
-        'key': os.getenv('API_KEY')  # Ambil API key dari .env
+        'key': 'AIzaSyD7BOIiyfvJjRyu8qGbLDgzwhZNCzQHgec'  # Ganti dengan API Key Anda
     }
     headers = {
         'Content-Type': 'application/json',
